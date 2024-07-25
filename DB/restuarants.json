@@ -1,0 +1,143 @@
+[
+    {
+        "id": 1,
+        "name": "Blackbeard's Bistro",
+        "price_range": "$$$$",
+        "food_type": ["Seafood"],
+        "location": "Tel Aviv"
+    },
+    {
+        "id": 2,
+        "name": "Pasteria",
+        "price_range": "$$$",
+        "food_type": ["Italian"],
+        "location": "Jerusalem"
+    },
+    {
+        "id": 3,
+        "name": "Kraken's Kitchen",
+        "price_range": "$$$",
+        "food_type": ["Seafood"],
+        "location": "Haifa"
+    },
+    {
+        "id": 4,
+        "name": "Treasure Tavern",
+        "price_range": "$$$$",
+        "food_type": ["Bar"],
+        "location": "Ramat Gan"
+    },
+    {
+        "id": 5,
+        "name": "Rum Barrel",
+        "price_range": "$$",
+        "food_type": ["Israeli", "Bar"],
+        "location": "Netanya"
+    },
+    {
+        "id": 6,
+        "name": "Corsair Cafe",
+        "price_range": "$",
+        "food_type": ["Italian", "Fast food"],
+        "location": "Ashdod"
+    },
+    {
+        "id": 7,
+        "name": "Mariner's Grill",
+        "price_range": "$$",
+        "food_type": ["Seafood", "Asian"],
+        "location": "Herzliya"
+    },
+    {
+        "id": 8,
+        "name": "Buccaneer Bistro",
+        "price_range": "$$",
+        "food_type": ["Mexican"],
+        "location": "Beersheba"
+    },
+    {
+        "id": 9,
+        "name": "Shipshape Sweets",
+        "price_range": "$",
+        "food_type": ["Fast food"],
+        "location": "Petah Tikva"
+    },
+    {
+        "id": 10,
+        "name": "Jolly Jambalaya",
+        "price_range": "$$$$",
+        "food_type": ["Seafood"],
+        "location": "Holon"
+    },
+    {
+        "id": 11,
+        "name": "Ay Caramba",
+        "price_range": "$$",
+        "food_type": ["Mexican"],
+        "location": "Rishon LeZion"
+    },
+    {
+        "id": 12,
+        "name": "Oh No!",
+        "price_range": "$$$$",
+        "food_type": ["Bar"],
+        "location": "Natanya"
+    },
+    {
+        "id": 13,
+        "name": "Poochie",
+        "price_range": "$$",
+        "food_type": ["Israeli"],
+        "location": "Holon"
+    },
+    {
+        "id": 14,
+        "name": "Kawaii",
+        "price_range": "$",
+        "food_type": ["Asian"],
+        "location": "Jerusalem"
+    },
+    {
+        "id": 15,
+        "name": "Skullers",
+        "price_range": "$$",
+        "food_type": ["Fast food"],
+        "location": "Tel Aviv"
+    },
+    {
+        "id": 16,
+        "name": "Maritime Munchies",
+        "price_range": "$$$$",
+        "food_type": ["Seafood"],
+        "location": "Ramat Gan"
+    },
+    {
+        "id": 17,
+        "name": "Pizza Plaza",
+        "price_range": "$$$",
+        "food_type": ["Italian"],
+        "location": "Beersheba"
+    },
+    {
+        "id": 18,
+        "name": "What The Wok!?",
+        "price_range": "$$$$",
+        "food_type": ["Asian"],
+        "location": "Haifa"
+    },
+    {
+        "id": 19,
+        "name": "Moshe's Hummus Place",
+        "price_range": "$",
+        "food_type": ["Israeli"],
+        "location": "Kfar Saba"
+    },
+    {
+        "id": 20,
+        "name": "Karin's Sweets",
+        "price_range": "$$",
+        "food_type": ["Desserts"],
+        "location": "Haifa"
+    }
+]
+ 

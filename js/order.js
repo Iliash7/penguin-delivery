@@ -28,13 +28,13 @@ priceTabs.forEach((tab) => {
 });
 
 const manageIcons = () => {
+    let maxScrollValue = orderTabsList.scrollWidth - orderTabsList.clientWidth -20;
+
     if (orderTabsList.scrollLeft >= 20) {
         leftArrowContainer.classList.add("active");
     } else {
         leftArrowContainer.classList.remove("active");
     }
-
-    let maxScrollValue = orderTabsList.scrollWidth - orderTabsList.clientWidth -20;
 
     if(orderTabsList.scrollLeft >= maxScrollValue) {
         rightArrowContainer.classList.remove("active");
@@ -54,3 +54,11 @@ leftArrow.addEventListener("click", () => {
 });
 
 orderTabsList.addEventListener("scroll", manageIcons)
+
+async function fetchData() {
+    try{
+        
+    } catch(error) {
+        console.error(error);
+    }
+}

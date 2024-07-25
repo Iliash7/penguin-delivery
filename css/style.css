@@ -21,34 +21,70 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .header-container {
     background-color: #45badd;
-    text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    z-index: 10;
+}
+
+.header-container .logo {
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 600;
+}
+
+.header-container .header-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.header-container .header-tabs li {
+    margin: 0 10px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.header-container .header-tabs li a {
+    margin: 0 10px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.header-container .header-tabs li a:hover {
+    color: #57cbee;
+}
+
+.main-container {
+    background-image: url(../images/icebergBG.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding: 0px 100px 100px;
+    min-height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
-    margin: 0 -5vw;
+    animation: transitionIn 0.75s;
 }
-
-.address, .welcome{
-    border-radius: 25px;
-    background-color: #57cbee;
-    padding: 8px;
-}
-
-.address, .welcome, .title{
-    color: #ffffff;
-} 
 
 .nav-container ul {
     width: 100%;
     text-align: center;
 }
-
-
   
-li a {
+.nav-container li a {
     display: block;
     padding: 8px 16px;
     text-decoration: none;
@@ -57,23 +93,18 @@ li a {
     font-size: 10vh;
 }
   
-li a:hover{
+.nav-container li a:hover{
     background-color: #45badd;
     color: white;
 }
+
+
 
 .penguin-img {
     height:100vh; 
 }
 
-.main-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    animation: transitionIn 0.75s;
-}
-
-li {
+.nav-container li {
     margin: 20px;
 }
 

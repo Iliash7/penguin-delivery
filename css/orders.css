@@ -21,6 +21,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body { 
+    overflow: hidden;
+}
+
 .header-container {
     background-color: #45badd;
     text-align: center;
@@ -28,7 +32,6 @@
     justify-content: space-around;
     align-items: center;
     height: 60px;
-    margin: 0 -5vw;
 }
 
 .address, .welcome{
@@ -72,7 +75,12 @@ li a:hover{
 }
 
 .order-container {
+    
+    background-image: url(../images/icebergBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     animation: transitionIn 0.75s;
+    height: 100vh;
 }
 
 .order-options {
@@ -99,7 +107,6 @@ li a:hover{
     display: flex;
     gap: 16px;
     padding: 12px 24px;
-    margin: 0px;
     list-style: none;
     overflow-x: scroll;
     -ms-overflow-style: none;
