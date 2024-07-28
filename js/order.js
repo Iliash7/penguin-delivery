@@ -55,10 +55,67 @@ leftArrow.addEventListener("click", () => {
 
 orderTabsList.addEventListener("scroll", manageIcons)
 
-async function fetchData() {
-    try{
-        
-    } catch(error) {
-        console.error(error);
+const cardList = document.getElementById("card-list");
+
+const createCard = (name, priceRange, foodType, location) => {
+    const cardListItem = document.createElement('li');
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const cardContent = document.createElement('div');
+    cardContent.classList.add('card-content');
+
+    const cardRestaurantName = document.createElement('h3');
+    cardRestaurantName.classList.add('card-restaurant-name');
+    cardRestaurantName.textContent = name;
+
+    const cardPriceRange = document.createElement('p');
+    cardPriceRange.classList.add('card-price-range');
+    cardPriceRange.textContent = priceRange;
+
+    const cardFoodType = document.createElement('p');
+    cardFoodType.classList.add('card-food-type');
+    cardFoodType.textContent = foodType;
+
+    const cardLocation = document.createElement('p');
+    cardLocation.classList.add('card-location');
+    cardLocation.textContent = location;
+
+    card.appendChild(cardContent);
+    cardContent.appendChild(cardRestaurantName);
+    cardContent.appendChild(cardPriceRange);
+    cardContent.appendChild(cardFoodType);
+    cardContent.appendChild(cardLocation);
+    cardListItem.appendChild(card);
+    cardList.appendChild(cardListItem);
+}
+
+const generateCardsFromDB = (data) => {
+    for (let i in data) {
+        const currentRestaurant = data[i];
+        createCard(currentRestaurant.name,
+            currentRestaurant.price_range,
+            currentRestaurant.food_type,
+            currentRestaurant.location)
     }
 }
+
+const fetchJsonData = () => {
+    fetch("../DB/restuarants.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    generateCardsFromDB(data.restaurants);
+                }
+                )
+                .catch((error) => 
+                       console.error("Unable to fetch data:", error));
+}
+
+fetchJsonData();

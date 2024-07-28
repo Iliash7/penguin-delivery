@@ -77,6 +77,8 @@
     justify-content: space-around;
     align-items: center;
     animation: transitionIn 0.75s;
+    background-position: center;
+
 }
 
 .nav-container ul {

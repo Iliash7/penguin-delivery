@@ -1,54 +1,55 @@
-[
-    {
-        "id": 1,
-        "name": "Blackbeard's Bistro",
-        "price_range": "$$$$",
-        "food_type": ["Seafood"],
-        "location": "Tel Aviv"
-    },
-    {
-        "id": 2,
-        "name": "Pasteria",
-        "price_range": "$$$",
-        "food_type": ["Italian"],
-        "location": "Jerusalem"
-    },
-    {
-        "id": 3,
-        "name": "Kraken's Kitchen",
-        "price_range": "$$$",
-        "food_type": ["Seafood"],
-        "location": "Haifa"
-    },
-    {
-        "id": 4,
-        "name": "Treasure Tavern",
-        "price_range": "$$$$",
-        "food_type": ["Bar"],
-        "location": "Ramat Gan"
-    },
-    {
-        "id": 5,
-        "name": "Rum Barrel",
-        "price_range": "$$",
-        "food_type": ["Israeli", "Bar"],
-        "location": "Netanya"
-    },
-    {
-        "id": 6,
-        "name": "Corsair Cafe",
-        "price_range": "$",
-        "food_type": ["Italian", "Fast food"],
-        "location": "Ashdod"
-    },
-    {
-        "id": 7,
-        "name": "Mariner's Grill",
-        "price_range": "$$",
-        "food_type": ["Seafood", "Asian"],
-        "location": "Herzliya"
-    },
-    {
+{
+    "restaurants":[
+        {
+            "id": 1,
+            "name": "Blackbeard's Bistro",
+            "price_range": "$$$$",
+            "food_type": ["Seafood"],
+            "location": "Tel Aviv"
+        },
+        {
+            "id": 2,
+            "name": "Pasteria",
+            "price_range": "$$$",
+            "food_type": ["Italian"],
+            "location": "Jerusalem"
+        },
+        {
+            "id": 3,
+            "name": "Kraken's Kitchen",
+            "price_range": "$$$",
+            "food_type": ["Seafood"],
+            "location": "Haifa"
+        },
+        {
+            "id": 4,
+            "name": "Treasure Tavern",
+            "price_range": "$$$$",
+            "food_type": ["Bar"],
+            "location": "Ramat Gan"
+        },
+        {
+            "id": 5,
+            "name": "Rum Barrel",
+            "price_range": "$$",
+            "food_type": ["Israeli", "Bar"],
+            "location": "Netanya"
+        },
+        {
+            "id": 6,
+            "name": "Corsair Cafe",
+            "price_range": "$",
+            "food_type": ["Italian", "Fast food"],
+            "location": "Ashdod"
+        },
+        {
+            "id": 7,
+            "name": "Mariner's Grill",
+            "price_range": "$$",
+            "food_type": ["Seafood", "Asian"],
+            "location": "Herzliya"
+        },
+        {
         "id": 8,
         "name": "Buccaneer Bistro",
         "price_range": "$$",
@@ -140,4 +141,4 @@
         "location": "Haifa"
     }
 ]
- 
+}
