@@ -17,6 +17,7 @@ orderTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         removeAllActiveClasses(orderTabs);
         tab.classList.add("active");
+        filterCardsFromDB();
     });
 });
 
@@ -24,6 +25,7 @@ priceTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         removeAllActiveClasses(priceTabs);
         tab.classList.add("active");
+        filterCardsFromDB();
     });
 });
 
@@ -99,6 +101,38 @@ const generateCardsFromDB = (data) => {
             currentRestaurant.food_type,
             currentRestaurant.location)
     }
+}
+
+const filterCardsFromDB = () => {
+    let chosenFoodType = document.querySelector(".order-options ul .active");
+    let chosenPriceRange = document.querySelector(".price-options ul .active");
+    let cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        
+        if (chosenFoodType.innerHTML == "All") {
+            card.classList.remove("hide");
+        } else {
+            if (card.firstChild.childNodes[2].innerHTML.includes(chosenFoodType.innerHTML)) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+        }
+    });
+debugger;
+    cards = document.querySelectorAll(".card:not(.hide)");
+    cards.forEach((card) => {
+
+        if (chosenPriceRange.innerHTML == "All") {
+            card.classList.remove("hide");
+        } else {
+            if (card.firstChild.childNodes[1].innerHTML == chosenPriceRange.innerHTML) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+        }
+    });
 }
 
 const fetchJsonData = () => {
