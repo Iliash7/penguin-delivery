@@ -7,6 +7,17 @@ const priceTabsList = document.querySelector(".price-options ul");
 const rightArrowContainer = document.querySelector(".order-options .right-arrow");
 const leftArrowContainer = document.querySelector(".order-options .left-arrow");
 
+const responsiveNavBar = () => {
+    var x = document.getElementById("top-nav");
+    if (x.className === "header-container") {
+      x.className += " responsive";
+    } else {
+      x.className = "header-container";
+    }
+  }
+
+document.getElementById("icon").addEventListener("click", responsiveNavBar);
+
 const removeAllActiveClasses = (tabs) => {
     tabs.forEach((tab) => {
         tab.classList.remove("active");
