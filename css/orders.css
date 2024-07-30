@@ -18,8 +18,7 @@
     border: transparent;
     text-decoration: none;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+ }
 
 body { 
     overflow: hidden;
@@ -37,10 +36,7 @@ body {
     font-weight: 600;
 }
 
-.nav-container ul {
-    width: 100%;
-    text-align: center;
-}
+
 
 li a:hover{
     background-color: #57cbee;

@@ -107,7 +107,6 @@ const createCard = (name, priceRange, foodType, location) => {
 const menuItemsList = document.createElement('ul');
 
 const createMenu = (menu) => {
-    debugger;
     const menuListItem = document.createElement('li');
     console.log(menu);
     console.log(menu[0]);
