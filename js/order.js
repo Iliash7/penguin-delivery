@@ -104,6 +104,37 @@ const createCard = (name, priceRange, foodType, location) => {
     cardList.appendChild(cardListItem);
 }
 
+const menuItemsList = document.createElement('ul');
+
+const createMenu = (menu) => {
+    debugger;
+    const menuListItem = document.createElement('li');
+    console.log(menu);
+    console.log(menu[0]);
+    console.log(menu[0].price);
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const cardContent = document.createElement('div');
+    cardContent.classList.add('card-content');
+
+    for (let i in menu) {
+        console.log(menu);
+    }
+    const itemName = document.createElement('h3');
+    itemName.classList.add('item-name');
+    itemName.textContent = name;
+
+    const itemPrice = document.createElement('p');
+    itemPrice.classList.add('item-price');
+    itemPrice.textContent = price;
+
+    card.appendChild(cardContent);
+    cardContent.appendChild(itemName);
+    cardContent.appendChild(itemPrice);
+};
+
 const generateCardsFromDB = (data) => {
     for (let i in data) {
         const currentRestaurant = data[i];
@@ -114,10 +145,19 @@ const generateCardsFromDB = (data) => {
     }
 }
 
+const generateMenuFromDB = (data) => {
+    for (let i in data) {
+        const currentRestaurant = data[i];
+        createMenu(currentRestaurant.menu)
+    }
+}
+
 const filterCardsFromDB = () => {
     let chosenFoodType = document.querySelector(".order-options ul .active");
     let chosenPriceRange = document.querySelector(".price-options ul .active");
     let cards = document.querySelectorAll(".card");
+
+    
     cards.forEach((card) => {
         
         if (chosenFoodType.innerHTML == "All") {
@@ -130,7 +170,7 @@ const filterCardsFromDB = () => {
             }
         }
     });
-debugger;
+    
     cards = document.querySelectorAll(".card:not(.hide)");
     cards.forEach((card) => {
 
@@ -144,7 +184,7 @@ debugger;
             }
         }
     });
-}
+};
 
 const fetchJsonData = () => {
     fetch("../DB/restuarants.json")
@@ -157,6 +197,11 @@ const fetchJsonData = () => {
                 })
                 .then((data) => {
                     generateCardsFromDB(data.restaurants);
+
+                    const cards = document.querySelectorAll(".card");
+                    cards.forEach((card) => {
+                        card.addEventListener("click", createMenu)
+                    });
                 }
                 )
                 .catch((error) => 
@@ -164,3 +209,4 @@ const fetchJsonData = () => {
 }
 
 fetchJsonData();
+

@@ -5,140 +5,420 @@
             "name": "Blackbeard's Bistro",
             "price_range": "$$$$",
             "food_type": ["Seafood"],
-            "location": "Tel Aviv"
+            "location": "Tel Aviv",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 2,
             "name": "Pasteria",
             "price_range": "$$$",
             "food_type": ["Italian"],
-            "location": "Jerusalem"
+            "location": "Jerusalem",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 3,
             "name": "Kraken's Kitchen",
             "price_range": "$$$",
             "food_type": ["Seafood"],
-            "location": "Haifa"
+            "location": "Haifa",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 4,
             "name": "Treasure Tavern",
             "price_range": "$$$$",
             "food_type": ["Bar"],
-            "location": "Ramat Gan"
+            "location": "Ramat Gan",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 5,
             "name": "Rum Barrel",
             "price_range": "$$",
             "food_type": ["Israeli", "Bar"],
-            "location": "Netanya"
+            "location": "Netanya",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 6,
             "name": "Corsair Cafe",
             "price_range": "$",
             "food_type": ["Italian", "Fast food"],
-            "location": "Ashdod"
+            "location": "Ashdod",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
             "id": 7,
             "name": "Mariner's Grill",
             "price_range": "$$",
             "food_type": ["Seafood", "Asian"],
-            "location": "Herzliya"
+            "location": "Herzliya",
+            "menu": [
+                {
+                    "item_name": "item 1",
+                    "price": 15
+                },
+                {
+                    "item_name": "item 2",
+                    "price": 47
+                },
+                {
+                    "item_name": "item 3",
+                    "price": 30
+                }
+            ]
         },
         {
         "id": 8,
         "name": "Buccaneer Bistro",
         "price_range": "$$",
         "food_type": ["Mexican"],
-        "location": "Beersheba"
+        "location": "Beersheba",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 9,
         "name": "Shipshape Sweets",
         "price_range": "$",
         "food_type": ["Fast food"],
-        "location": "Petah Tikva"
+        "location": "Petah Tikva",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 10,
         "name": "Jolly Jambalaya",
         "price_range": "$$$$",
         "food_type": ["Seafood"],
-        "location": "Holon"
+        "location": "Holon",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 11,
         "name": "Ay Caramba",
         "price_range": "$$",
         "food_type": ["Mexican"],
-        "location": "Rishon LeZion"
+        "location": "Rishon LeZion",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 12,
         "name": "Oh No!",
         "price_range": "$$$$",
         "food_type": ["Bar"],
-        "location": "Natanya"
+        "location": "Natanya",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 13,
         "name": "Poochie",
         "price_range": "$$",
         "food_type": ["Israeli"],
-        "location": "Holon"
+        "location": "Holon",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 14,
         "name": "Kawaii",
         "price_range": "$",
         "food_type": ["Asian"],
-        "location": "Jerusalem"
+        "location": "Jerusalem",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 15,
         "name": "Skullers",
         "price_range": "$$",
         "food_type": ["Fast food"],
-        "location": "Tel Aviv"
+        "location": "Tel Aviv",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 16,
         "name": "Maritime Munchies",
         "price_range": "$$$$",
         "food_type": ["Seafood"],
-        "location": "Ramat Gan"
+        "location": "Ramat Gan",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 17,
         "name": "Pizza Plaza",
         "price_range": "$$$",
         "food_type": ["Italian"],
-        "location": "Beersheba"
+        "location": "Beersheba",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 18,
         "name": "What The Wok!?",
         "price_range": "$$$$",
         "food_type": ["Asian"],
-        "location": "Haifa"
+        "location": "Haifa",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 19,
         "name": "Moshe's Hummus Place",
         "price_range": "$",
         "food_type": ["Israeli"],
-        "location": "Kfar Saba"
+        "location": "Kfar Saba",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     },
     {
         "id": 20,
         "name": "Karin's Sweets",
         "price_range": "$$",
         "food_type": ["Desserts"],
-        "location": "Haifa"
+        "location": "Haifa",
+        "menu": [
+            {
+                "item_name": "item 1",
+                "price": 15
+            },
+            {
+                "item_name": "item 2",
+                "price": 47
+            },
+            {
+                "item_name": "item 3",
+                "price": 30
+            }
+        ]
     }
 ]
 }
