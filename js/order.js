@@ -70,7 +70,7 @@ orderTabsList.addEventListener("scroll", manageIcons)
 
 const cardList = document.getElementById("card-list");
 
-const createCard = (name, priceRange, foodType, location) => {
+const createCard = (name, priceRange, foodType, location, menu) => {
     const cardListItem = document.createElement('li');
 
     const card = document.createElement('div');
@@ -78,6 +78,10 @@ const createCard = (name, priceRange, foodType, location) => {
 
     const cardContent = document.createElement('div');
     cardContent.classList.add('card-content');
+    const cardMenuSection = document.createElement('div');
+    cardMenuSection.classList.add('card-menu-section');
+    cardMenuSection.classList.add('hide');
+    cardMenuSection.setAttribute("id", "menu");
 
     const cardRestaurantName = document.createElement('h3');
     cardRestaurantName.classList.add('card-restaurant-name');
@@ -95,43 +99,43 @@ const createCard = (name, priceRange, foodType, location) => {
     cardLocation.classList.add('card-location');
     cardLocation.textContent = location;
 
+    addMenuItems(menu, cardMenuSection)
+
     card.appendChild(cardContent);
     cardContent.appendChild(cardRestaurantName);
     cardContent.appendChild(cardPriceRange);
     cardContent.appendChild(cardFoodType);
     cardContent.appendChild(cardLocation);
+    cardContent.appendChild(cardMenuSection);
     cardListItem.appendChild(card);
     cardList.appendChild(cardListItem);
 }
 
 const menuItemsList = document.createElement('ul');
 
-const createMenu = (menu) => {
-    const menuListItem = document.createElement('li');
-    console.log(menu);
-    console.log(menu[0]);
-    console.log(menu[0].price);
+const addMenuItems = (menu, cardMenuSection) => {
+    const menuHeader = document.createElement('h4');
+    let cardMenu;
 
-    const card = document.createElement('div');
-    card.classList.add('card');
+    menuHeader.textContent = "Menu:";
+    cardMenuSection.appendChild(menuHeader);
 
-    const cardContent = document.createElement('div');
-    cardContent.classList.add('card-content');
+    menu.forEach((item) => {
+        cardMenu = document.createElement('p');
+        cardMenu.textContent = `${item.name}: ${item.price}$`;
+        cardMenuSection.appendChild(cardMenu);
+    })
 
-    for (let i in menu) {
-        console.log(menu);
+}
+
+const createMenu = (event) => {    
+    let cardMenu = event.target.lastChild;
+    console.log(cardMenu)
+    if (cardMenu.classList.contains("hide")) {
+        cardMenu.classList.remove("hide");
+    } else {
+        cardMenu.classList.add("hide");
     }
-    const itemName = document.createElement('h3');
-    itemName.classList.add('item-name');
-    itemName.textContent = name;
-
-    const itemPrice = document.createElement('p');
-    itemPrice.classList.add('item-price');
-    itemPrice.textContent = price;
-
-    card.appendChild(cardContent);
-    cardContent.appendChild(itemName);
-    cardContent.appendChild(itemPrice);
 };
 
 const generateCardsFromDB = (data) => {
@@ -140,16 +144,11 @@ const generateCardsFromDB = (data) => {
         createCard(currentRestaurant.name,
             currentRestaurant.price_range,
             currentRestaurant.food_type,
-            currentRestaurant.location)
+            currentRestaurant.location,
+            currentRestaurant.menu)
     }
 }
 
-const generateMenuFromDB = (data) => {
-    for (let i in data) {
-        const currentRestaurant = data[i];
-        createMenu(currentRestaurant.menu)
-    }
-}
 
 const filterCardsFromDB = () => {
     let chosenFoodType = document.querySelector(".order-options ul .active");
@@ -158,7 +157,8 @@ const filterCardsFromDB = () => {
 
     
     cards.forEach((card) => {
-        
+        card.lastChild.lastChild.classList.add("hide");
+
         if (chosenFoodType.innerHTML == "All") {
             card.classList.remove("hide");
         } else {

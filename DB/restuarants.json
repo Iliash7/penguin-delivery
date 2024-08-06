@@ -1,144 +1,467 @@
 {
-    "restaurants":[
+    "restaurants": [
         {
             "id": 1,
             "name": "Blackbeard's Bistro",
             "price_range": "$$$$",
-            "food_type": ["Seafood"],
-            "location": "Tel Aviv"
+            "food_type": [
+                "Seafood"
+            ],
+            "location": "Tel Aviv",
+            "menu": [
+                {
+                    "name": "Pirate's Delight Seafood Platter",
+                    "price": 22.99
+                },
+                {
+                    "name": "Golden Treasure Crab Cakes",
+                    "price": 14.49
+                },
+                {
+                    "name": "Captain's Rum Punch",
+                    "price": 10.49
+                }
+            ]
         },
         {
             "id": 2,
             "name": "Pasteria",
             "price_range": "$$$",
-            "food_type": ["Italian"],
-            "location": "Jerusalem"
+            "food_type": [
+                "Italian"
+            ],
+            "location": "Jerusalem",
+            "menu": [
+                {
+                    "name": "Tuscan Burger",
+                    "price": 6.29
+                },
+                {
+                    "name": "Roman Fries",
+                    "price": 13.49
+                },
+                {
+                    "name": "Mediterranean Spritz",
+                    "price": 9.29
+                }
+            ]
         },
         {
             "id": 3,
             "name": "Kraken's Kitchen",
             "price_range": "$$$",
-            "food_type": ["Seafood"],
-            "location": "Haifa"
+            "food_type": [
+                "Seafood"
+            ],
+            "location": "Haifa",
+            "menu": [
+                {
+                    "name": "Kraken's Catch Seafood Platter",
+                    "price": 23.49
+                },
+                {
+                    "name": "Tentacle Shrimp Tacos",
+                    "price": 16.29
+                },
+                {
+                    "name": "Sailor's Ale",
+                    "price": 10.99
+                }
+            ]
         },
         {
             "id": 4,
             "name": "Treasure Tavern",
             "price_range": "$$$$",
-            "food_type": ["Bar"],
-            "location": "Ramat Gan"
+            "food_type": [
+                "Bar"
+            ],
+            "location": "Ramat Gan",
+            "menu": [
+                {
+                    "name": "Tavern Burger",
+                    "price": 8.29
+                },
+                {
+                    "name": "Barrel Fries",
+                    "price": 13.99
+                },
+                {
+                    "name": "Brewmaster's Special",
+                    "price": 11.49
+                }
+            ]
         },
         {
             "id": 5,
             "name": "Rum Barrel",
             "price_range": "$$",
-            "food_type": ["Israeli", "Bar"],
-            "location": "Netanya"
+            "food_type": [
+                "Israeli",
+                "Bar"
+            ],
+            "location": "Netanya",
+            "menu": [
+                {
+                    "name": "Israeli Fusion Shawarma",
+                    "price": 7.49
+                },
+                {
+                    "name": "Spiced Fries",
+                    "price": 12.49
+                },
+                {
+                    "name": "Barrel-aged Brew",
+                    "price": 9.79
+                }
+            ]
         },
         {
             "id": 6,
             "name": "Corsair Cafe",
             "price_range": "$",
-            "food_type": ["Italian", "Fast food"],
-            "location": "Ashdod"
+            "food_type": [
+                "Italian",
+                "Fast food"
+            ],
+            "location": "Ashdod",
+            "menu": [
+                {
+                    "name": "Corsair Classic Pizza",
+                    "price": 6.29
+                },
+                {
+                    "name": "Quick Fries",
+                    "price": 10.99
+                },
+                {
+                    "name": "Speedy Soda",
+                    "price": 7.49
+                }
+            ]
         },
         {
             "id": 7,
             "name": "Mariner's Grill",
             "price_range": "$$",
-            "food_type": ["Seafood", "Asian"],
-            "location": "Herzliya"
+            "food_type": [
+                "Seafood",
+                "Asian"
+            ],
+            "location": "Herzliya",
+            "menu": [
+                {
+                    "name": "Mariner's Mixed Seafood Stir-Fry",
+                    "price": 16.99
+                },
+                {
+                    "name": "Sea Breeze Spring Rolls",
+                    "price": 13.29
+                },
+                {
+                    "name": "Asian Fusion Drink",
+                    "price": 8.99
+                }
+            ]
         },
         {
-        "id": 8,
-        "name": "Buccaneer Bistro",
-        "price_range": "$$",
-        "food_type": ["Mexican"],
-        "location": "Beersheba"
-    },
-    {
-        "id": 9,
-        "name": "Shipshape Sweets",
-        "price_range": "$",
-        "food_type": ["Fast food"],
-        "location": "Petah Tikva"
-    },
-    {
-        "id": 10,
-        "name": "Jolly Jambalaya",
-        "price_range": "$$$$",
-        "food_type": ["Seafood"],
-        "location": "Holon"
-    },
-    {
-        "id": 11,
-        "name": "Ay Caramba",
-        "price_range": "$$",
-        "food_type": ["Mexican"],
-        "location": "Rishon LeZion"
-    },
-    {
-        "id": 12,
-        "name": "Oh No!",
-        "price_range": "$$$$",
-        "food_type": ["Bar"],
-        "location": "Natanya"
-    },
-    {
-        "id": 13,
-        "name": "Poochie",
-        "price_range": "$$",
-        "food_type": ["Israeli"],
-        "location": "Holon"
-    },
-    {
-        "id": 14,
-        "name": "Kawaii",
-        "price_range": "$",
-        "food_type": ["Asian"],
-        "location": "Jerusalem"
-    },
-    {
-        "id": 15,
-        "name": "Skullers",
-        "price_range": "$$",
-        "food_type": ["Fast food"],
-        "location": "Tel Aviv"
-    },
-    {
-        "id": 16,
-        "name": "Maritime Munchies",
-        "price_range": "$$$$",
-        "food_type": ["Seafood"],
-        "location": "Ramat Gan"
-    },
-    {
-        "id": 17,
-        "name": "Pizza Plaza",
-        "price_range": "$$$",
-        "food_type": ["Italian"],
-        "location": "Beersheba"
-    },
-    {
-        "id": 18,
-        "name": "What The Wok!?",
-        "price_range": "$$$$",
-        "food_type": ["Asian"],
-        "location": "Haifa"
-    },
-    {
-        "id": 19,
-        "name": "Moshe's Hummus Place",
-        "price_range": "$",
-        "food_type": ["Israeli"],
-        "location": "Kfar Saba"
-    },
-    {
-        "id": 20,
-        "name": "Karin's Sweets",
-        "price_range": "$$",
-        "food_type": ["Desserts"],
-        "location": "Haifa"
-    }
-]
+            "id": 8,
+            "name": "Buccaneer Bistro",
+            "price_range": "$$",
+            "food_type": [
+                "Mexican"
+            ],
+            "location": "Beersheba",
+            "menu": [
+                {
+                    "name": "Buccaneer's Burrito",
+                    "price": 7.49
+                },
+                {
+                    "name": "Fiesta Fries",
+                    "price": 12.79
+                },
+                {
+                    "name": "Margarita Splash",
+                    "price": 9.19
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Shipshape Sweets",
+            "price_range": "$",
+            "food_type": [
+                "Fast food"
+            ],
+            "location": "Petah Tikva",
+            "menu": [
+                {
+                    "name": "Sweet Sailor Chicken Nuggets",
+                    "price": 5.29
+                },
+                {
+                    "name": "Quick Fry Trio",
+                    "price": 11.99
+                },
+                {
+                    "name": "Skull's Soda",
+                    "price": 6.49
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Jolly Jambalaya",
+            "price_range": "$$$$",
+            "food_type": [
+                "Seafood"
+            ],
+            "location": "Holon",
+            "menu": [
+                {
+                    "name": "Jambalaya Seafood Stew",
+                    "price": 18.99
+                },
+                {
+                    "name": "Bayou Fries",
+                    "price": 14.99
+                },
+                {
+                    "name": "Gulf Coast Cooler",
+                    "price": 11.29
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Ay Caramba",
+            "price_range": "$$",
+            "food_type": [
+                "Mexican"
+            ],
+            "location": "Rishon LeZion",
+            "menu": [
+                {
+                    "name": "Caramba Classic Tacos",
+                    "price": 6.19
+                },
+                {
+                    "name": "Zesty Fries",
+                    "price": 12.29
+                },
+                {
+                    "name": "Fiesta Fresca",
+                    "price": 9.49
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Oh No!",
+            "price_range": "$$$$",
+            "food_type": [
+                "Bar"
+            ],
+            "location": "Natanya",
+            "menu": [
+                {
+                    "name": "Oh No! BBQ Ribs",
+                    "price": 12.79
+                },
+                {
+                    "name": "Drunken Fries",
+                    "price": 14.49
+                },
+                {
+                    "name": "Bar's Best Brew",
+                    "price": 11.99
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Poochie",
+            "price_range": "$$",
+            "food_type": [
+                "Israeli"
+            ],
+            "location": "Holon",
+            "menu": [
+                {
+                    "name": "Poochie's Falafel Plate",
+                    "price": 6.49
+                },
+                {
+                    "name": "Hummus Fries",
+                    "price": 13.19
+                },
+                {
+                    "name": "Israeli Delight Drink",
+                    "price": 8.49
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Kawaii",
+            "price_range": "$",
+            "food_type": [
+                "Asian"
+            ],
+            "location": "Jerusalem",
+            "menu": [
+                {
+                    "name": "Kawaii Crunch Sushi Roll",
+                    "price": 5.69
+                },
+                {
+                    "name": "Noodle Fries",
+                    "price": 11.29
+                },
+                {
+                    "name": "Tokyo Fizz",
+                    "price": 7.79
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Skullers",
+            "price_range": "$$",
+            "food_type": [
+                "Fast food"
+            ],
+            "location": "Tel Aviv",
+            "menu": [
+                {
+                    "name": "Skullers' Classic Chicken Sandwich",
+                    "price": 5.39
+                },
+                {
+                    "name": "Fried Treasure",
+                    "price": 11.59
+                },
+                {
+                    "name": "Skull's Soda",
+                    "price": 6.49
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Maritime Munchies",
+            "price_range": "$$$$",
+            "food_type": [
+                "Seafood"
+            ],
+            "location": "Ramat Gan",
+            "menu": [
+                {
+                    "name": "Maritime Feast Seafood Platter",
+                    "price": 18.99
+                },
+                {
+                    "name": "Oceanic Fries",
+                    "price": 15.49
+                },
+                {
+                    "name": "Seafarer's Lager",
+                    "price": 12.79
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Pizza Plaza",
+            "price_range": "$$$",
+            "food_type": [
+                "Italian"
+            ],
+            "location": "Beersheba",
+            "menu": [
+                {
+                    "name": "Pizza Plaza Special",
+                    "price": 7.29
+                },
+                {
+                    "name": "Cheesy Garlic Fries",
+                    "price": 13.79
+                },
+                {
+                    "name": "Italian Soda",
+                    "price": 9.19
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "name": "What The Wok!?",
+            "price_range": "$$$$",
+            "food_type": [
+                "Asian"
+            ],
+            "location": "Haifa",
+            "menu": [
+                {
+                    "name": "Wok Master Stir-Fry",
+                    "price": 17.49
+                },
+                {
+                    "name": "Dim Sum Delights",
+                    "price": 14.29
+                },
+                {
+                    "name": "Dragon Fruit Punch",
+                    "price": 12.99
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Moshe's Hummus Place",
+            "price_range": "$",
+            "food_type": [
+                "Israeli"
+            ],
+            "location": "Kfar Saba",
+            "menu": [
+                {
+                    "name": "Moshe's Hummus Plate",
+                    "price": 6.39
+                },
+                {
+                    "name": "Falafel Bites",
+                    "price": 11.99
+                },
+                {
+                    "name": "Mint Lemonade",
+                    "price": 7.29
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Karin's Sweets",
+            "price_range": "$$",
+            "food_type": [
+                "Desserts"
+            ],
+            "location": "Haifa",
+            "menu": [
+                {
+                    "name": "Karin's Chocolate Lava Cake",
+                    "price": 6.49
+                },
+                {
+                    "name": "Caramelized Banana Fries",
+                    "price": 12.29
+                },
+                {
+                    "name": "Sweet Vanilla Shake",
+                    "price": 8.99
+                }
+            ]
+        }
+    ]
 }
