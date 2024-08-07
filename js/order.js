@@ -7,6 +7,7 @@ const priceTabsList = document.querySelector(".price-options ul");
 const rightArrowContainer = document.querySelector(".order-options .right-arrow");
 const leftArrowContainer = document.querySelector(".order-options .left-arrow");
 const menuItems = document.querySelectorAll(".card-menu-section p");
+const order = document.getElementById("your-order");
 
 const responsiveNavBar = () => {
     var x = document.getElementById("top-nav");
@@ -203,7 +204,7 @@ const filterCardsFromDB = () => {
         if (chosenPriceRange.innerHTML == "All") {
             card.classList.remove("hide");
         } else {
-            if (card.firstChild.childNodes[1].innerHTML == chosenPriceRange.innerHTML) {
+            if (card.firstChild.firstChild.childNodes[1].innerHTML == chosenPriceRange.innerHTML) {
                 card.classList.remove("hide");
             } else {
                 card.classList.add("hide");
@@ -211,6 +212,13 @@ const filterCardsFromDB = () => {
         }
     });
 };
+
+const showOrder = (event) => {
+    event.target.classList.toggle("order-open")
+    
+}
+
+order.addEventListener("click", showOrder);
 
 const fetchJsonData = () => {
     fetch("../DB/restuarants.json")

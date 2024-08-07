@@ -311,6 +311,23 @@ li a:hover, button:hover{
     display: none;
 }
 
+.your-order {
+    background-color: #fff;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    margin: 15px;
+    padding: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.order-open {
+    width: 400px;
+    height: 500px;
+}
 
 @media only screen and (max-width: 730px) {
     .card {
@@ -323,5 +340,11 @@ li a:hover, button:hover{
 
     .card-menu-section button {
         margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .order-open {
+        width: 0;
     }
 }
