@@ -38,8 +38,7 @@ body {
 
 
 
-li a:hover{
-    background-color: #57cbee;
+li a:hover, button:hover{
     color: white;
 }
 
@@ -267,9 +266,10 @@ li a:hover{
     padding: 16px;
 }
 
-.card-content *{
+.card-info-section{
     pointer-events: none;
 }
+
 
 .card-content h3 {
     font-size: 28px;
@@ -286,6 +286,25 @@ li a:hover{
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #666;
+    cursor: auto;
+}
+
+.card-menu-section p {
+    line-height: 5;
+}
+
+.card-menu-section button {
+    cursor: pointer;
+    margin: 25px 0;
+    padding: 5px 16px;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #57cbee;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .hide {
@@ -296,5 +315,13 @@ li a:hover{
 @media only screen and (max-width: 730px) {
     .card {
         width: 360px;
-    }    
+    }
+
+    .item-container {
+        flex-direction: column;
+    }
+
+    .card-menu-section button {
+        margin: 0px;
+    }
 }

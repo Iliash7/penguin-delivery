@@ -6,6 +6,7 @@ const orderTabsList = document.querySelector(".order-options ul");
 const priceTabsList = document.querySelector(".price-options ul");
 const rightArrowContainer = document.querySelector(".order-options .right-arrow");
 const leftArrowContainer = document.querySelector(".order-options .left-arrow");
+const menuItems = document.querySelectorAll(".card-menu-section p");
 
 const responsiveNavBar = () => {
     var x = document.getElementById("top-nav");
@@ -39,6 +40,11 @@ priceTabs.forEach((tab) => {
         filterCardsFromDB();
     });
 });
+
+menuItems.forEach((item) => {
+    item.addEventListener("click", item.style.color = "red")
+});
+
 
 const manageIcons = () => {
     let maxScrollValue = orderTabsList.scrollWidth - orderTabsList.clientWidth -20;
@@ -78,6 +84,8 @@ const createCard = (name, priceRange, foodType, location, menu) => {
 
     const cardContent = document.createElement('div');
     cardContent.classList.add('card-content');
+    const cardInfoSection = document.createElement('div');
+    cardInfoSection.classList.add('card-info-section');
     const cardMenuSection = document.createElement('div');
     cardMenuSection.classList.add('card-menu-section');
     cardMenuSection.classList.add('hide');
@@ -102,39 +110,59 @@ const createCard = (name, priceRange, foodType, location, menu) => {
     addMenuItems(menu, cardMenuSection)
 
     card.appendChild(cardContent);
-    cardContent.appendChild(cardRestaurantName);
-    cardContent.appendChild(cardPriceRange);
-    cardContent.appendChild(cardFoodType);
-    cardContent.appendChild(cardLocation);
+    cardInfoSection.appendChild(cardRestaurantName);
+    cardInfoSection.appendChild(cardPriceRange);
+    cardInfoSection.appendChild(cardFoodType);
+    cardInfoSection.appendChild(cardLocation);
+    cardContent.appendChild(cardInfoSection)
     cardContent.appendChild(cardMenuSection);
     cardListItem.appendChild(card);
     cardList.appendChild(cardListItem);
 }
 
+
+/*
+cardInfoSection
+cardContent.appendChild(cardRestaurantName);
+    cardContent.appendChild(cardPriceRange);
+    cardContent.appendChild(cardFoodType);
+    cardContent.appendChild(cardLocation);
+    cardContent.appendChild(cardInfoSection)
+    cardContent.appendChild(cardMenuSection);*/
+
 const menuItemsList = document.createElement('ul');
 
 const addMenuItems = (menu, cardMenuSection) => {
     const menuHeader = document.createElement('h4');
-    let cardMenu;
+    let cardMenuItem;
 
     menuHeader.textContent = "Menu:";
     cardMenuSection.appendChild(menuHeader);
 
     menu.forEach((item) => {
-        cardMenu = document.createElement('p');
-        cardMenu.textContent = `${item.name}: ${item.price}$`;
-        cardMenuSection.appendChild(cardMenu);
+        let itemButton = document.createElement('button')
+        let itemContainer = document.createElement('div');
+
+        itemContainer.classList.add('item-container');
+        cardMenuItem = document.createElement('p');
+        cardMenuItem.textContent = `${item.name}: ${item.price}$`;
+        itemButton.textContent = "add to order";
+        cardMenuSection.appendChild(itemContainer)
+        itemContainer.appendChild(cardMenuItem);
+        itemContainer.appendChild(itemButton);
     })
 
 }
 
 const createMenu = (event) => {    
     let cardMenu = event.target.lastChild;
-    console.log(cardMenu)
-    if (cardMenu.classList.contains("hide")) {
-        cardMenu.classList.remove("hide");
-    } else {
-        cardMenu.classList.add("hide");
+    console.log(event.target);
+    if (event.target.id != "menu") {
+        if (cardMenu.classList.contains("hide")) {
+            cardMenu.classList.remove("hide");
+        } else {
+            cardMenu.classList.add("hide");
+        }
     }
 };
 
@@ -154,7 +182,6 @@ const filterCardsFromDB = () => {
     let chosenFoodType = document.querySelector(".order-options ul .active");
     let chosenPriceRange = document.querySelector(".price-options ul .active");
     let cards = document.querySelectorAll(".card");
-
     
     cards.forEach((card) => {
         card.lastChild.lastChild.classList.add("hide");
@@ -162,7 +189,7 @@ const filterCardsFromDB = () => {
         if (chosenFoodType.innerHTML == "All") {
             card.classList.remove("hide");
         } else {
-            if (card.firstChild.childNodes[2].innerHTML.includes(chosenFoodType.innerHTML)) {
+            if (card.firstChild.firstChild.childNodes[2].innerHTML.includes(chosenFoodType.innerHTML)) {
                 card.classList.remove("hide");
             } else {
                 card.classList.add("hide");
