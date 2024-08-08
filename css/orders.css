@@ -327,6 +327,10 @@ li a:hover, button:hover{
 .order-open {
     width: 400px;
     height: 500px;
+    display: grid;
+    place-items: center;
+    color: #666;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 730px) {

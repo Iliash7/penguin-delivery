@@ -158,7 +158,7 @@ const addMenuItems = (menu, cardMenuSection) => {
 const createMenu = (event) => {    
     let cardMenu = event.target.lastChild;
     console.log(event.target);
-    if (event.target.id != "menu") {
+    if (event.target.id != "menu" && event.target.className != "item-container") {
         if (cardMenu.classList.contains("hide")) {
             cardMenu.classList.remove("hide");
         } else {
@@ -174,11 +174,11 @@ const generateCardsFromDB = (data) => {
             currentRestaurant.price_range,
             currentRestaurant.food_type,
             currentRestaurant.location,
-            currentRestaurant.menu)
+            currentRestaurant.menu) 
     }
 }
 
-
+ 
 const filterCardsFromDB = () => {
     let chosenFoodType = document.querySelector(".order-options ul .active");
     let chosenPriceRange = document.querySelector(".price-options ul .active");
@@ -215,7 +215,16 @@ const filterCardsFromDB = () => {
 
 const showOrder = (event) => {
     event.target.classList.toggle("order-open")
-    
+    if (event.target.classList.contains("order-open")) {
+        
+        event.target.innerHTML = "you have'nt placed any orders yet"
+    } else {
+        event.target.innerHTML = "See your order"
+    }
+}
+
+const addItemToOrder = (event) => {
+    console.log("this:\n", event.target.parentNode.firstChild)
 }
 
 order.addEventListener("click", showOrder);
@@ -235,6 +244,11 @@ const fetchJsonData = () => {
                     const cards = document.querySelectorAll(".card");
                     cards.forEach((card) => {
                         card.addEventListener("click", createMenu)
+                    }); 
+                    
+                    const orderButtons = document.querySelectorAll(".item-container button");
+                    orderButtons.forEach((button) => {
+                        button.addEventListener("click", addItemToOrder)
                     });
                 }
                 )
