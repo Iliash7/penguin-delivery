@@ -7,7 +7,6 @@ const priceTabsList = document.querySelector(".price-options ul");
 const rightArrowContainer = document.querySelector(".order-options .right-arrow");
 const leftArrowContainer = document.querySelector(".order-options .left-arrow");
 const menuItems = document.querySelectorAll(".card-menu-section p");
-const order = document.getElementById("your-order");
 
 const responsiveNavBar = () => {
     var x = document.getElementById("top-nav");
@@ -155,9 +154,9 @@ const addMenuItems = (menu, cardMenuSection) => {
 
 }
 
-const createMenu = (event) => {    
+const createMenu = (event) => {   
     let cardMenu = event.target.lastChild;
-    console.log(event.target);
+    console.log(cardMenu)
     if (event.target.id != "menu" && event.target.className != "item-container") {
         if (cardMenu.classList.contains("hide")) {
             cardMenu.classList.remove("hide");
@@ -213,20 +212,29 @@ const filterCardsFromDB = () => {
     });
 };
 
+let orderedItems = 0;
+
 const showOrder = (event) => {
+    debugger;
     event.target.classList.toggle("order-open")
     if (event.target.classList.contains("order-open")) {
-        
-        event.target.innerHTML = "you have'nt placed any orders yet"
+        if (orderedItems == 0) {
+            event.target.innerHTML = "you have'nt placed any orders yet"
+        } else {
+            event.target.innerHTML = addItemToOrder();  
+        }
     } else {
         event.target.innerHTML = "See your order"
     }
 }
 
 const addItemToOrder = (event) => {
-    console.log("this:\n", event.target.parentNode.firstChild)
+    orderedItems++;
+    console.log("this:\n", event.target.parentNode.firstChild.innerHTML)
+    return event.target.parentNode.firstChild.innerText;
 }
 
+const order = document.getElementById("your-order");
 order.addEventListener("click", showOrder);
 
 const fetchJsonData = () => {
