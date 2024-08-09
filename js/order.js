@@ -115,7 +115,7 @@ const createCard = (name, priceRange, foodType, location, menu) => {
     cardInfoSection.appendChild(cardFoodType);
     cardInfoSection.appendChild(cardLocation);
     cardContent.appendChild(cardInfoSection)
-    cardContent.appendChild(cardMenuSection);
+    card.appendChild(cardMenuSection);
     cardListItem.appendChild(card);
     cardList.appendChild(cardListItem);
 }
@@ -155,7 +155,8 @@ const addMenuItems = (menu, cardMenuSection) => {
 }
 
 const createMenu = (event) => {   
-    let cardMenu = event.target.lastChild;
+    debugger;
+    let cardMenu = event.target.parentNode.lastChild;
     console.log(cardMenu)
     if (event.target.id != "menu" && event.target.className != "item-container") {
         if (cardMenu.classList.contains("hide")) {
@@ -214,24 +215,29 @@ const filterCardsFromDB = () => {
 
 let orderedItems = 0;
 
-const showOrder = (event) => {
+const showOrder = async(event) => {
+    //this sucks, replace with a func which adds all the orders from the array.
     debugger;
     event.target.classList.toggle("order-open")
     if (event.target.classList.contains("order-open")) {
         if (orderedItems == 0) {
             event.target.innerHTML = "you have'nt placed any orders yet"
         } else {
-            event.target.innerHTML = addItemToOrder();  
+            console.log("BAZINGA:", event.target)
+            event.target.innerHTML = await addItemToOrder(event.target);  
         }
     } else {
         event.target.innerHTML = "See your order"
     }
 }
 
-const addItemToOrder = (event) => {
+const addItemToOrder = async(event) => {
+    debugger;
     orderedItems++;
+    console.log(event);
     console.log("this:\n", event.target.parentNode.firstChild.innerHTML)
     return event.target.parentNode.firstChild.innerText;
+    // add to array or orders
 }
 
 const order = document.getElementById("your-order");
@@ -249,7 +255,7 @@ const fetchJsonData = () => {
                 .then((data) => {
                     generateCardsFromDB(data.restaurants);
 
-                    const cards = document.querySelectorAll(".card");
+                    const cards = document.querySelectorAll(".card-content");
                     cards.forEach((card) => {
                         card.addEventListener("click", createMenu)
                     }); 
