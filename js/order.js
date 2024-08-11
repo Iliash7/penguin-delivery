@@ -213,35 +213,51 @@ const filterCardsFromDB = () => {
     });
 };
 
+const orderWindow = document.querySelector(".your-order ul");
+
 let orderedItems = 0;
 
-const showOrder = async(event) => {
-    //this sucks, replace with a func which adds all the orders from the array.
+const orderedItemsArray = [];
+
+
+const showOrder = (event) => {
     debugger;
     event.target.classList.toggle("order-open")
+    
+    console.log(orderWindow)
+    orderedItemsArray.forEach(item => {
+        let order = document.createElement('div')
+        let orderedItem = document.createElement('p')
+        let orderListItem = document.createElement('li')
+        orderedItem.innerHTML = item
+        order.classList.add('ordered-item')
+        order.appendChild(orderedItem)
+        orderListItem.appendChild(order)
+        orderWindow.appendChild(orderListItem)
+    });
+
     if (event.target.classList.contains("order-open")) {
         if (orderedItems == 0) {
             event.target.innerHTML = "you have'nt placed any orders yet"
         } else {
-            console.log("BAZINGA:", event.target)
-            event.target.innerHTML = await addItemToOrder(event.target);  
+            // hide the grey text
+            event.target.innerHTML 
         }
     } else {
         event.target.innerHTML = "See your order"
     }
 }
 
-const addItemToOrder = async(event) => {
+const addItemToOrder = (event) => {
     debugger;
     orderedItems++;
-    console.log(event);
-    console.log("this:\n", event.target.parentNode.firstChild.innerHTML)
-    return event.target.parentNode.firstChild.innerText;
-    // add to array or orders
+    console.log("this:\n", typeof(event.target.parentNode.firstChild.innerHTML))
+    orderedItemsArray.push(event.target.parentNode.firstChild.innerHTML
+    );
 }
 
-const order = document.getElementById("your-order");
-order.addEventListener("click", showOrder);
+const yourOrderWindow = document.getElementById("your-order");
+yourOrderWindow.addEventListener("click", showOrder);
 
 const fetchJsonData = () => {
     fetch("../DB/restuarants.json")

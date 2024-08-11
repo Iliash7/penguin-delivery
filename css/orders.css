@@ -333,6 +333,12 @@ li a:hover, button:hover{
     font-size: 20px;
 }
 
+.ordered-item {
+    border: 2px solid #3994af;
+    padding: 25px;
+    border-radius: 25px;
+}
+
 @media only screen and (max-width: 730px) {
     .card {
         width: 360px;
