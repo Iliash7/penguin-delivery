@@ -47,7 +47,7 @@ menuItems.forEach((item) => {
 
 
 const manageIcons = () => {
-    let maxScrollValue = orderTabsList.scrollWidth - orderTabsList.clientWidth -20;
+    let maxScrollValue = orderTabsList.scrollWidth - orderTabsList.clientWidth - 20;
 
     if (orderTabsList.scrollLeft >= 20) {
         leftArrowContainer.classList.add("active");
@@ -134,7 +134,8 @@ const menuItemsList = document.createElement('ul');
 
 const addMenuItems = (menu, cardMenuSection) => {
     const menuHeader = document.createElement('h4');
-    let cardMenuItem;
+    let cardMenuItemName;
+    let cardMenuItemPrice;
 
     menuHeader.textContent = "Menu:";
     cardMenuSection.appendChild(menuHeader);
@@ -144,11 +145,14 @@ const addMenuItems = (menu, cardMenuSection) => {
         let itemContainer = document.createElement('div');
 
         itemContainer.classList.add('item-container');
-        cardMenuItem = document.createElement('p');
-        cardMenuItem.textContent = `${item.name}: ${item.price}$`;
+        cardMenuItemName = document.createElement('p');
+        cardMenuItemPrice = document.createElement('p');
+        cardMenuItemName.textContent = `${item.name}: `;
+        cardMenuItemPrice.textContent = `${item.price}$`;
         itemButton.textContent = "add to order";
         cardMenuSection.appendChild(itemContainer)
-        itemContainer.appendChild(cardMenuItem);
+        itemContainer.appendChild(cardMenuItemName);
+        itemContainer.appendChild(cardMenuItemPrice);
         itemContainer.appendChild(itemButton);
     })
 
@@ -180,13 +184,12 @@ const generateCardsFromDB = (data) => {
 
  
 const filterCardsFromDB = () => {
+    debugger;
     let chosenFoodType = document.querySelector(".order-options ul .active");
     let chosenPriceRange = document.querySelector(".price-options ul .active");
-    let cards = document.querySelectorAll(".card");
+    let cards = document.querySelectorAll(".card-container .card");
     
     cards.forEach((card) => {
-        card.lastChild.lastChild.classList.add("hide");
-
         if (chosenFoodType.innerHTML == "All") {
             card.classList.remove("hide");
         } else {
@@ -198,7 +201,7 @@ const filterCardsFromDB = () => {
         }
     });
     
-    cards = document.querySelectorAll(".card:not(.hide)");
+    cards = document.querySelectorAll(".card-container .card:not(.hide)");
     cards.forEach((card) => {
 
         if (chosenPriceRange.innerHTML == "All") {
@@ -215,49 +218,73 @@ const filterCardsFromDB = () => {
 
 const orderWindow = document.querySelector(".your-order ul");
 
-let orderedItems = 0;
-
 const orderedItemsArray = [];
 
+const hideAllOrderedItems = () => {
+    orderWindow.childNodes.forEach((item) => {
+        item.classList.add('hide')
+    })
+}
 
-const showOrder = (event) => {
+const showAllOrderedItems = () => {
+    orderWindow.childNodes.forEach((item) => {
+        item.classList.remove('hide')
+    })
+}
+
+const showOrder = () => {
     debugger;
-    event.target.classList.toggle("order-open")
-    
-    console.log(orderWindow)
-    orderedItemsArray.forEach(item => {
-        let order = document.createElement('div')
-        let orderedItem = document.createElement('p')
-        let orderListItem = document.createElement('li')
-        orderedItem.innerHTML = item
-        order.classList.add('ordered-item')
-        order.appendChild(orderedItem)
-        orderListItem.appendChild(order)
-        orderWindow.appendChild(orderListItem)
-    });
+    const window = document.querySelector(".your-order");
+    const windowText = document.getElementById("order-window-text")
 
-    if (event.target.classList.contains("order-open")) {
-        if (orderedItems == 0) {
-            event.target.innerHTML = "you have'nt placed any orders yet"
-        } else {
-            // hide the grey text
-            event.target.innerHTML 
-        }
+    if (window.classList.contains("order-open")) {
+        window.classList.remove("order-open")
+        windowText.classList.remove("hide")
+        hideAllOrderedItems()
     } else {
-        event.target.innerHTML = "See your order"
+        window.classList.add("order-open")
+        windowText.classList.add("hide")
+        showAllOrderedItems()
     }
 }
+const yourOrderWindow = document.getElementById("your-order");
+yourOrderWindow.addEventListener("click", showOrder);
 
 const addItemToOrder = (event) => {
     debugger;
-    orderedItems++;
-    console.log("this:\n", typeof(event.target.parentNode.firstChild.innerHTML))
-    orderedItemsArray.push(event.target.parentNode.firstChild.innerHTML
-    );
+    console.log("this:\n", (event.target.parentNode))
+    orderedItemsArray.push(event.target.parentNode)
+    console.log(orderedItemsArray)
+    orderWindow.innerHTML = "";
+
+    orderedItemsArray.forEach((item) => {
+        const orderedListItem = document.createElement('li');
+        orderedListItem.classList.add('hide')
+
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        console.log("sure is an item:",item.childNodes[1])
+        
+        const cardContent = document.createElement('div');
+        cardContent.classList.add('card-content');
+        const cardInfoSection = document.createElement('div');
+        cardInfoSection.classList.add('card-info-section');
+        const itemName = document.createElement('h3');
+        itemName.textContent = item.childNodes[0].innerHTML;
+        const itemPrice = document.createElement('p');
+        itemPrice.textContent = item.childNodes[1].innerHTML;
+
+          
+        card.appendChild(cardContent);
+        cardContent.appendChild(cardInfoSection)
+        cardInfoSection.appendChild(itemName)
+        cardInfoSection.appendChild(itemPrice)
+        orderedListItem.appendChild(card)
+        orderWindow.appendChild(orderedListItem)
+    })
 }
 
-const yourOrderWindow = document.getElementById("your-order");
-yourOrderWindow.addEventListener("click", showOrder);
 
 const fetchJsonData = () => {
     fetch("../DB/restuarants.json")
@@ -287,4 +314,13 @@ const fetchJsonData = () => {
 }
 
 fetchJsonData();
+
+window.addEventListener('mouseup',function(event){
+    let yourOrder = document.getElementById('your-order');
+    if (yourOrder.classList.contains('order-open')) {
+        if(event.target != yourOrder && event.target.parentNode != yourOrder){
+            showOrder()
+        }
+    }
+});
 

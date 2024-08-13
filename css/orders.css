@@ -258,6 +258,19 @@ li a:hover, button:hover{
     transition: transform .2s
 }
 
+.your-order .card {
+    background-color: transparent;
+    margin: 20px 0;
+}
+
+.your-order ul {
+    max-width: 350px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
 .card:hover {
     transform: scale(1.05);
 }
@@ -322,6 +335,15 @@ li a:hover, button:hover{
     padding: 15px;
     font-size: 25px;
     cursor: pointer;
+    pointer-events: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.your-order * {
+    pointer-events: none;
 }
 
 .order-open {
@@ -331,6 +353,7 @@ li a:hover, button:hover{
     place-items: center;
     color: #666;
     font-size: 20px;
+    padding-top: 500px;
 }
 
 .ordered-item {
