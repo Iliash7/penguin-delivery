@@ -222,13 +222,18 @@ const orderedItemsArray = [];
 
 const hideAllOrderedItems = () => {
     orderWindow.childNodes.forEach((item) => {
-        item.classList.add('hide')
+        if (!item.classList.contains('checkout')) {
+            item.classList.add('hide')
+        }
     })
 }
 
 const showAllOrderedItems = () => {
     orderWindow.childNodes.forEach((item) => {
-        item.classList.remove('hide')
+        console.log(orderWindow.childNodes)
+        if (!item.classList.contains('checkout')) {
+            item.classList.remove('hide')
+        }
     })
 }
 
@@ -236,14 +241,18 @@ const showOrder = () => {
     debugger;
     const window = document.querySelector(".your-order");
     const windowText = document.getElementById("order-window-text")
+    const checkout = document.querySelector(".checkout")
+    console.log(checkout)
 
     if (window.classList.contains("order-open")) {
         window.classList.remove("order-open")
         windowText.classList.remove("hide")
+        checkout.classList.add('hide')
         hideAllOrderedItems()
     } else {
         window.classList.add("order-open")
         windowText.classList.add("hide")
+        checkout.classList.remove('hide')
         showAllOrderedItems()
     }
 }
