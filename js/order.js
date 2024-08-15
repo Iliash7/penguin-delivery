@@ -222,6 +222,7 @@ const orderedItemsArray = [];
 
 const hideAllOrderedItems = () => {
     orderWindow.childNodes.forEach((item) => {
+        console.log(item)
         if (!item.classList.contains('checkout')) {
             item.classList.add('hide')
         }
@@ -229,12 +230,21 @@ const hideAllOrderedItems = () => {
 }
 
 const showAllOrderedItems = () => {
-    orderWindow.childNodes.forEach((item) => {
-        console.log(orderWindow.childNodes)
+    let orderWindowChildren = [...orderWindow.childNodes]
+    console.log(orderWindowChildren)
+    
+    for (let i = 1; i < orderWindowChildren.length; i++) {
+        let item = orderWindowChildren[i]
+        console.log(item)
         if (!item.classList.contains('checkout')) {
             item.classList.remove('hide')
         }
-    })
+
+    }
+}
+
+const calculateTotalCost = () => {
+    
 }
 
 const showOrder = () => {
@@ -243,6 +253,7 @@ const showOrder = () => {
     const windowText = document.getElementById("order-window-text")
     const checkout = document.querySelector(".checkout")
     console.log(checkout)
+    calculateTotalCost()
 
     if (window.classList.contains("order-open")) {
         window.classList.remove("order-open")
@@ -264,7 +275,17 @@ const addItemToOrder = (event) => {
     console.log("this:\n", (event.target.parentNode))
     orderedItemsArray.push(event.target.parentNode)
     console.log(orderedItemsArray)
-    orderWindow.innerHTML = "";
+    orderWindow.innerHTML = ""
+
+    let checkoutContainer = document.createElement('div')
+    let checkoutButton = document.createElement('button')
+    let checkoutTotalCost = document.createElement('p')
+
+    checkoutContainer.classList.add('checkout', 'card', 'hide')
+    checkoutButton.innerHTML = "To checkout"
+    checkoutContainer.appendChild(checkoutButton)
+    checkoutContainer.appendChild(checkoutTotalCost)
+    orderWindow.appendChild(checkoutContainer)
 
     orderedItemsArray.forEach((item) => {
         const orderedListItem = document.createElement('li');
