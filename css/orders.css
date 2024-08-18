@@ -320,8 +320,15 @@ li a:hover, button:hover{
     justify-content: space-between;
 }
 
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: top;
+}
+
 .checkout button{
-    background-color: red;
+    background-color: #57cbee;
     padding: 15px 25px;
     border-radius: 5px;
 }

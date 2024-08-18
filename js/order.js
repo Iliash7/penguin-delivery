@@ -243,8 +243,13 @@ const showAllOrderedItems = () => {
     }
 }
 
-const calculateTotalCost = () => {
-    
+const calculateTotalCost = (num1, num2) => {
+    num1 = num1.slice(0, -1)
+    num2 = num2.slice(0, -1)
+    console.log(num1)
+    console.log(num2)
+
+    return (+num1 + +num2).toFixed(2) + '$'
 }
 
 const showOrder = () => {
@@ -253,7 +258,6 @@ const showOrder = () => {
     const windowText = document.getElementById("order-window-text")
     const checkout = document.querySelector(".checkout")
     console.log(checkout)
-    calculateTotalCost()
 
     if (window.classList.contains("order-open")) {
         window.classList.remove("order-open")
@@ -266,7 +270,13 @@ const showOrder = () => {
         checkout.classList.remove('hide')
         showAllOrderedItems()
     }
+
+    
+    if (orderedItemsArray.length == 0) {
+        checkout.classList.add('hide')
+    }
 }
+
 const yourOrderWindow = document.getElementById("your-order");
 yourOrderWindow.addEventListener("click", showOrder);
 
@@ -304,8 +314,8 @@ const addItemToOrder = (event) => {
         itemName.textContent = item.childNodes[0].innerHTML;
         const itemPrice = document.createElement('p');
         itemPrice.textContent = item.childNodes[1].innerHTML;
-
-          
+        checkoutTotalCost.textContent = calculateTotalCost(checkoutTotalCost.textContent, itemPrice.textContent) 
+        
         card.appendChild(cardContent);
         cardContent.appendChild(cardInfoSection)
         cardInfoSection.appendChild(itemName)
